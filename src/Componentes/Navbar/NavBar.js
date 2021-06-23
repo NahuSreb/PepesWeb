@@ -3,6 +3,7 @@ import CartWidgets from "./CartWidgets/CartWidgets";
 
 function NavBar() {
   
+  
   return (
     <div>
       <nav>
