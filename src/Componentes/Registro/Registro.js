@@ -1,5 +1,5 @@
 
-import Input from './Input';
+import Input from '../input/Input';
 function Registro() {
     return (
         <div className="reg">

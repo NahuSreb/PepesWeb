@@ -1,6 +1,7 @@
 import './App.css';
-import Registro from './Registro'
-import NavBar from './NavBar'
+/* import Registro from './Componentes/Registro/Registro' */
+import Inicio from './Componentes/Inicio/Inicio';
+import NavBar from './Componentes/Navbar/NavBar'
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <NavBar />
       </header>
       <main>
-        <Registro />
+        <Inicio />
       </main>
     </div>
   );
