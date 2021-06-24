@@ -1,18 +1,23 @@
 import './App.css';
-/* import Registro from './Componentes/Registro/Registro' */
-import Inicio from './Componentes/Inicio/Inicio';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Inicio from './Componentes/Pages/Inicio';
 import NavBar from './Componentes/Navbar/NavBar'
+import Registro from './Componentes/Pages/Registro'
+import Login from './Componentes/Pages/Login'
+import MoreInfo from './Componentes/Pages/MoreInfo';
 
 function App() {
+
+ 
   return (
-    <div>
-      <header>
-        <NavBar />
-      </header>
-      <main>
-        <Inicio />
-      </main>
-    </div>
+    <BrowserRouter>
+          <NavBar />
+      <Route path="/" exact component={Inicio} />
+      <Route path="/Registro" exact component={Registro} />
+      <Route path="/Login" exact component={Login} />
+      <Route path="/MoreInfo" exact component={MoreInfo} />
+    </BrowserRouter>
+
   );
 }
 

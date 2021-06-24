@@ -191,6 +191,7 @@ ul, ol {
   display: none;
   position: absolute;
   min-width: 140px;
+  
 }
 
 .menu li:hover>ul {
@@ -250,6 +251,14 @@ ul, ol {
   color: f #000;
   display: inline-block;
   border: grey 1px solid;
+}
+
+.etiqueta p{
+  display: inline;
+}
+
+.etiqueta span{
+  display: block;
 }
 
 .etiqueta img {

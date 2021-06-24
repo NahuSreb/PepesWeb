@@ -1,4 +1,4 @@
-import ItemListContainer from "./ItemListContainer/ItemListContainer"
+import ItemListContainer from "../ItemListContainer/ItemListContainer"
 function Inicio() {
     return (
   <div>

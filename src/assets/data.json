@@ -1,0 +1,37 @@
+[
+    {
+        "producto": "Guiso de lenteja",
+        "precio": 15,
+        "stock": 10,
+        "img": "./img/data.json",
+        "descripcion": ""
+    },
+    {
+        "producto": "Familiar de milanesa",
+        "precio": 300,
+        "stock": 15,
+        "img": "",
+        "descripcion": ""
+    },
+    {
+        "producto": "Familiar de milanesa especial",
+        "precio": 400,
+        "stock": 10,
+        "img": "",
+        "descripcion": ""
+    },
+    {
+        "producto": "Super pancho",
+        "precio": 200,
+        "stock": 25,
+        "img": "",
+        "descripcion": ""
+    },
+    {
+        "producto": "Papas fritas caballo",
+        "precio": 250,
+        "stock": 10,
+        "img": "",
+        "descripcion": ""
+    }
+]

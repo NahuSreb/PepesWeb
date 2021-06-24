@@ -1,5 +1,6 @@
 
 import Input from '../input/Input';
+import { Link } from "react-router-dom";
 function Login() {
     return (
         <div className="reg">
@@ -8,8 +9,8 @@ function Login() {
                     <Input x="Email" />
                     <Input x="Pass" />
                     <button>Login</button>
-                    <a>¿Olvidaste tu constraseña?</a>
-                    <a>Registrarse</a>
+                    <p>¿Olvidaste tu constraseña?</p>
+                    <Link to="/Registro"><p>Registrarse</p></Link>
                     
                 </div>
             </form>
