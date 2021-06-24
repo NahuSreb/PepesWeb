@@ -1,5 +1,5 @@
 
-import {useState } from "react";
+import { useState } from "react";
 import Item from "./Item";
 import Carrito from "./Carrito"
 
@@ -51,7 +51,7 @@ function ItemListContainer() {
   ])
 
   const [carrito, setCarrito] = useState([])
-  return (
+  return (<div>
     <div className="show-article">
 
       {productos.map((producto) => (
@@ -62,7 +62,9 @@ function ItemListContainer() {
           productos={productos} />
       ))}
 
-<Carrito carrito = {carrito} setCarrito = {setCarrito}/>
+      
+    </div>
+    <Carrito carrito={carrito} setCarrito={setCarrito} />
     </div>
   );
 }
