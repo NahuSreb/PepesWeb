@@ -253,6 +253,10 @@ ul, ol {
   border: grey 1px solid;
 }
 
+.etiqueta__nombre{
+  display: inline-block;
+}
+
 .etiqueta p{
   display: inline;
 }

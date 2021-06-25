@@ -5,27 +5,27 @@ import {useState } from "react";
 function Registro() {
     const [inputs] = useState([
         {
-            id:1,
+            id:"name",
             des:"Nombre"
         },
         {
-            id:2,
+            id:"lastname",
             des:"Apellido"
         },
         {
-            id:3,
+            id:"emailReg",
             des:"Email"
         },
         {
-            id:4,
+            id:"phone",
             des:"Telefono"
         },
         {
-            id:5,
+            id:"passReg",
             des:"Password"
         },
         {
-            id:6,
+            id:"confPassReg",
             des:"Confirmar Password"
         }
     ])

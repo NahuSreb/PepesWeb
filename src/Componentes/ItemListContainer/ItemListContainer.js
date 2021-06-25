@@ -14,7 +14,8 @@ function ItemListContainer() {
       precio: 15,
       stock: 10,
       img: "./img/data.json",
-      descripcion: ""
+      descripcion: "",
+      cantidad: 1
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ function ItemListContainer() {
       precio: 300,
       stock: 15,
       img: "",
-      descripcion: ""
+      descripcion: "",
+      cantidad: 1
     },
     {
       id: 3,
@@ -30,7 +32,8 @@ function ItemListContainer() {
       precio: 400,
       stock: 10,
       img: "",
-      descripcion: ""
+      descripcion: "",
+      cantidad: 1
     },
     {
       id: 4,
@@ -38,7 +41,8 @@ function ItemListContainer() {
       precio: 200,
       stock: 25,
       img: "",
-      descripcion: ""
+      descripcion: "",
+      cantidad: 1
     },
     {
       id: 5,
@@ -46,7 +50,17 @@ function ItemListContainer() {
       precio: 250,
       stock: 10,
       img: "",
-      descripcion: ""
+      descripcion: "",
+      cantidad: 1
+    },
+    {
+      id: 6,
+      nombre: "Papas fritas",
+      precio: 200,
+      stock: 10,
+      img: "",
+      descripcion: "",
+      cantidad: 1
     }
   ])
 
@@ -62,10 +76,10 @@ function ItemListContainer() {
           productos={productos} />
       ))}
 
-      
+
     </div>
     <Carrito carrito={carrito} setCarrito={setCarrito} />
-    </div>
+  </div>
   );
 }
 export default ItemListContainer;
