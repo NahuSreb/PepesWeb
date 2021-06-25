@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "./Item";
-import Widgets from "../Navbar/CartWidgets/Widgets";
+
 
 const Carrito = ({carrito, setCarrito}) =>{
     return(

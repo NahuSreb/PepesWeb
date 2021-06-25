@@ -10,11 +10,11 @@ function NavBar() {
           <label className="icono">Pepe's web</label>
           <ul className="menu_items" id="MeItems">
             <li><button><Link to="/">Inicio</Link></button></li>
-            <li><button><Link>Mi compra</Link></button>
+            <li><button><Link to="">Mi compra</Link></button>
               <CartWidgets />
             </li>
-            <li><button><Link>Boton 2</Link></button></li>
-            <li><button><Link>Boton 3</Link></button></li>
+            <li><button><Link to="">Boton 2</Link></button></li>
+            <li><button><Link to="">Boton 3</Link></button></li>
           </ul>
           <ul className="menu_right">
             <li> <button><Link to="/Login">iniciar Secion</Link></button></li>
