@@ -297,6 +297,6 @@ ul, ol {
 .etiqueta__datos {
   display: inline-block;
   position: absolute;
-  padding: 0.5rem;
+ padding-left: 00.5rem;
 }
 

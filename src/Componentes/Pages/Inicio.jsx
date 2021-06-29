@@ -65,12 +65,28 @@ function Inicio() {
 
 
   const [carrito, setCarrito] = useState([])
+  const [titulo, setTitulo] = useState()
+/*   const SolicitarItems = new Promise((resolve, reject) => {
+    setTitulo(titulo = "loading...")
+    setTimeout(() => {
+      resolve(<ItemListContainer productos={productos} carrito={carrito} setCarrito={setCarrito} />)
+      reject(<h2>Ocurrio un error</h2>)
+    })
+  }) */
   return (
     <div>
       <NavBar carrito={carrito} setCarrito={setCarrito} />
       <CartWidgets carrito={carrito} setCarrito={setCarrito} />
-      
+
       <h1>Nuestros productos</h1>
+     {/*  {SolicitarItems.then(
+        then(
+          console.log("Todo Gucci")
+        ),
+
+        console.log("Nada Gucci")
+
+      )} */}
       <ItemListContainer productos={productos} carrito={carrito} setCarrito={setCarrito} />
     </div>
   );
