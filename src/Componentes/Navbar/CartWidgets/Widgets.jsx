@@ -1,12 +1,12 @@
 import imagenes from "../../../assets/imagenes"
 
-function Widgets({producto, precio}) {
-
+function Widgets({productos, producto, carrito, setCarrito}) {
+  const { id, nombre, precio, stock, img, cantidad, /* descripcion */ } = producto
   return (
     <div className="des__item">
-      <img src={imagenes.img1} alt='' />
+      <img src={img} alt='' />
       <div className="etiqueta__datos">
-        <span>{producto}</span>
+        <span>{nombre}</span>
         <p></p>
         <span>Precio: $ {precio}</span>
       </div>

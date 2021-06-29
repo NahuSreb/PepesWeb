@@ -1,32 +1,32 @@
 
-import Input from '../input/Input';
-import {useState } from "react";
+import { Input } from '../input/Input';
+import { useState } from "react";
 
 function Registro() {
     const [inputs] = useState([
         {
-            id:"name",
-            des:"Nombre"
+            id: "name",
+            des: "Nombre"
         },
         {
-            id:"lastname",
-            des:"Apellido"
+            id: "lastname",
+            des: "Apellido"
         },
         {
-            id:"emailReg",
-            des:"Email"
+            id: "emailReg",
+            des: "Email"
         },
         {
-            id:"phone",
-            des:"Telefono"
+            id: "phone",
+            des: "Telefono"
         },
         {
-            id:"passReg",
-            des:"Password"
+            id: "passReg",
+            des: "Password"
         },
         {
-            id:"confPassReg",
-            des:"Confirmar Password"
+            id: "confPassReg",
+            des: "Confirmar Password"
         }
     ])
     return (
@@ -34,11 +34,11 @@ function Registro() {
             <form className="reg_form">
                 <div>
                     {inputs.map((input) => (
-                        <Input key={inputs.id}
+                        <Input key={inputs.des}
                             input={input}
-                             />
+                        />
                     ))}
-                    
+
                 </div>
             </form>
         </div>
