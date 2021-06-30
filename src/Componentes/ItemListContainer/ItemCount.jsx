@@ -1,19 +1,33 @@
 import { useState, useEffect } from "react";
 
-export const ItemCount = ({stock}) => {
+export const ItemCount = ({ stock }) => {
     const [count, setCount] = useState(1);
+    const [disRes, setDisRes] = useState(true)
+    const [disSum, setDisSum] = useState(false)
 
-    const NumMinMax = () => {
-        if (stock > 0)
-            if (count < 1) setCount(count + 1)
-
-            else if (count > stock) setCount(count - 1)
+    const Sumar = () => {
+        setDisRes(false);
+        if (count == stock)
+        setDisSum(true);
+        else (
+            setCount(count + 1)
+        )
     }
 
-    useEffect(NumMinMax, [count])
+
+    const Restar = () => {
+        setDisSum(false);
+        if (count == 1)
+        setDisRes(true);
+        else (
+            setCount(count - 1)
+        )
+    }
+
+
     return (
         <div>
-            <button onClick={() => setCount(count - 1)}>-</button><p>{count}</p><button onClick={() => setCount(count + 1)}>+</button>
+            <button onClick={Restar} disabled={disRes}>-</button><p>{count}</p><button onClick={Sumar} disabled={disSum}>+</button>
         </div>
     )
 }
