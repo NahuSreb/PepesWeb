@@ -44,9 +44,9 @@ const Item = ({ producto, carrito, productos, setCarrito }) => {
             <span>Precio: $ {precio}</span>
             <p></p>
             <span>Stock:  {stock}</span>
-            <button>-</button><p>0</p><button>+</button>
+            <div><button disabled>-</button><p>0</p><button disabled>+</button></div>
             <p></p>
-            <button>Añadir al carrito</button>
+            <button disabled>Añadir al carrito</button>
           </div>
         </div>
       )}

@@ -1,8 +1,9 @@
 import ItemListContainer from "../ItemListContainer/ItemListContainer"
 import imagenes from "../../assets/imagenes"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../Navbar/NavBar";
 import CartWidgets from "../Navbar/CartWidgets/CartWidgets";
+import { Link } from "react-router-dom";
 
 function Inicio() {
   const [productos, /* setProductos */] = useState([
@@ -26,7 +27,7 @@ function Inicio() {
     },
     {
       id: 3,
-      nombre: "Familiar de milanesa especial",
+      nombre: "Familiar especial",
       precio: 400,
       stock: 10,
       img: imagenes.img3,
@@ -65,14 +66,16 @@ function Inicio() {
 
 
   const [carrito, setCarrito] = useState([])
-  const [titulo, setTitulo] = useState()
-/*   const SolicitarItems = new Promise((resolve, reject) => {
+ /* const [titulo, setTitulo] = useState()
+   const SolicitarItems = new Promise((resolve, reject) => {
     setTitulo(titulo = "loading...")
     setTimeout(() => {
       resolve(<ItemListContainer productos={productos} carrito={carrito} setCarrito={setCarrito} />)
       reject(<h2>Ocurrio un error</h2>)
     })
   }) */
+
+
   return (
     <div>
       <NavBar carrito={carrito} setCarrito={setCarrito} />
@@ -88,6 +91,8 @@ function Inicio() {
 
       )} */}
       <ItemListContainer productos={productos} carrito={carrito} setCarrito={setCarrito} />
+      <p></p>
+      <Link to="/MoreInfo">Ir a ItemDetailContainer</Link>
     </div>
   );
 
