@@ -1,11 +1,11 @@
-function Widgets({productos, producto, carrito, setCarrito}) {
+function Widgets({producto}) {
+ 
   const { id, nombre, precio, stock, img, cantidad, /* descripcion */ } = producto
-
-  const onDel = id => {
+/*   const onDel = id => {
     const productos = carrito.filter(producto => producto.id !== id)
     setCarrito(productos)
     console.log("anothern't one :C")
-  }
+  } */
 
   return (
     <div className="des__item">
@@ -14,7 +14,7 @@ function Widgets({productos, producto, carrito, setCarrito}) {
         <span>{nombre}</span>
         <p></p>
         <span>Precio: $ {precio}</span>
-        <button type="button" onClick={() => onDel(id)}>x</button>
+        <button type="button" /* onClick={() => onDel(id)} */>x</button>
       </div>
     </div>
 

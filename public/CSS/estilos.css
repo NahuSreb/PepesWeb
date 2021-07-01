@@ -3,8 +3,10 @@ body {
   display: grid;
   margin: 0.05rem auto;
   grid-gap: 0.5rem;
-  grid-template-rows: repeat(4, auto); }
-  
+  grid-template-rows: 15vw auto 12vw;
+  min-height: 100vw;
+}
+
 .icono {
   display: block;
   color: black;
@@ -24,7 +26,6 @@ body {
 .menu_items, .menu_right {
   display: flex;
   float: left;
-  list-style: none;
 }
 
 .menu_items li, .menu_right li {
@@ -152,26 +153,12 @@ ul.show {
   box-sizing: border-box;
 }
 
-body {
-  display: grid;
-  margin: 0.05rem auto;
-  grid-gap: 0.5rem;
-  grid-template-rows: 15vw auto 12vw;
-  min-height: 100vw;
-}
-
 .separador {
   padding: 1rem;
 }
 
-
-
 ul, ol {
   list-style: none;
-}
-/* 
-.menu>li {
-  float: left;
 }
 
 .menu li a {
@@ -182,16 +169,14 @@ ul, ol {
 }
 
 .menu li a:hover {
-  
   background-color: #434343;
 }
 
 .menu li ul {
   z-index: 1000;
   display: none;
-  position: absolute;
+  /* position: absolute; */
   min-width: 140px;
-  
 }
 
 .menu li:hover>ul {
@@ -205,12 +190,12 @@ ul, ol {
 .menu li ul li ul {
   right: -140px;
   top: 0px;
-}*/
+}
 
 .des {
   display: none;
   position: absolute;
-  top: 2.5rem;
+  right: 25px;
   width: 15rem;
   background-color: #fff;
 }
@@ -236,7 +221,7 @@ ul, ol {
   display: inline-block;
   width: 4rem;
   height: 4rem;
-} 
+}
 
 .show-article {
   display: flex;
@@ -244,9 +229,7 @@ ul, ol {
   justify-content: space-between;
 }
 
-
 .etiqueta {
-  
   margin: 0.15rem;
   width: 30%;
   height: 6rem;
@@ -255,15 +238,15 @@ ul, ol {
   border: grey 1px solid;
 }
 
-.etiqueta__nombre{
+.etiqueta__nombre {
   display: inline-block;
 }
 
-.etiqueta p{
+.etiqueta p {
   display: inline;
 }
 
-.etiqueta span{
+.etiqueta span {
   display: block;
 }
 
@@ -280,30 +263,28 @@ ul, ol {
 
 .sinStock:hover {
   opacity: 0.5;
-  
-  }
+}
 
-.sinStock h1{
+.sinStock h1 {
   display: none;
   z-index: 1;
   position: relative;
   float: right;
-  }
+}
 
-  .sinStock:hover h1{
-    display: block;
-  }
+.sinStock:hover h1 {
+  display: block;
+}
 
 .etiqueta__datos {
   display: inline-block;
   position: absolute;
- padding-left: 00.5rem;
+  padding-left: 00.5rem;
 }
 
-.ItemDetailContainer{
+.ItemDetailContainer {
   margin: 0.15rem;
   width: 50%;
-  
   color: f #000;
   display: inline-block;
   border: grey 1px solid;

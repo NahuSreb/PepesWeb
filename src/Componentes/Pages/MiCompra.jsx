@@ -1,9 +1,9 @@
-import { useState } from "react";
-import Widgets from "../Navbar/CartWidgets/Widgets";
 
-export const MiCompra = (carrito, setCarrito) => {
+import Widgets from "../Widgets/Widgets";
+
+export const MiCompra = () => {
     <div className="show-article">
-        
+        <Widgets/>
     </div>
 
 }

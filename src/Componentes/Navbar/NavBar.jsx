@@ -1,10 +1,8 @@
-
-
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { CartWidgets } from "../CartWidgets/CartWidgets";
 
-
-function NavBar({ carrito, setCarrito }) {
+function NavBar() {
   const [login, setLogin] = useState(true)
 
   return (
@@ -20,7 +18,9 @@ function NavBar({ carrito, setCarrito }) {
 
           {login == true ? (
             <ul className="menu_right">
-              <li><Link to="/Carrito">Carrito{" " + carrito.length}</Link></li>
+              <li><Link to="/Carrito">Carrito</Link>
+              <CartWidgets />
+              </li>
             </ul>
           ) :
             (<ul className="menu_right">
