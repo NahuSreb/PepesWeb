@@ -13,7 +13,8 @@ export const ItemListContainer = () => {
       stock: 10,
       img: imagenes.img1,
       descripcion: "",
-      cantidad: 1
+      cantidad: 1,
+      categoria: "Comidas"
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ export const ItemListContainer = () => {
       stock: 15,
       img: imagenes.img2,
       descripcion: "",
-      cantidad: 1
+      cantidad: 1,
+      categoria: "Comidas"
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export const ItemListContainer = () => {
       stock: 10,
       img: imagenes.img3,
       descripcion: "",
-      cantidad: 1
+      cantidad: 1,
+      categoria: "Comidas"
     },
     {
       id: 4,
@@ -40,7 +43,8 @@ export const ItemListContainer = () => {
       stock: 25,
       img: imagenes.img4,
       descripcion: "",
-      cantidad: 1
+      cantidad: 1,
+      categoria: "Comidas"
     },
     {
       id: 5,
@@ -49,7 +53,8 @@ export const ItemListContainer = () => {
       stock: 10,
       img: imagenes.img5,
       descripcion: "",
-      cantidad: 1
+      cantidad: 1,
+      categoria: "Comidas"
     },
     {
       id: 6,
@@ -58,7 +63,68 @@ export const ItemListContainer = () => {
       stock: 0,
       img: imagenes.img6,
       descripcion: "",
-      cantidad: 1
+      cantidad: 1,
+      categoria: "Comidas"
+    },
+    {
+      id: 7,
+      nombre: "Coca chica",
+      precio: 100,
+      stock: 8,
+      img: imagenes.img7,
+      descripcion: "",
+      cantidad: 1,
+      categoria: "Bebidas"
+    },
+    {
+      id: 8,
+      nombre: "Coca grande",
+      precio: 200,
+      stock: 10,
+      img: imagenes.img8,
+      descripcion: "",
+      cantidad: 1,
+      categoria: "Bebidas"
+    },
+    {
+      id: 9,
+      nombre: "Agua 500ml",
+      precio: 80,
+      stock: 0,
+      img: imagenes.img9,
+      descripcion: "",
+      cantidad: 1,
+      categoria: "Bebidas"
+    },
+    {
+      id: 10,
+      nombre: "Quilmes lata 350ml",
+      precio: 150,
+      stock: 12,
+      img: imagenes.img10,
+      descripcion: "",
+      cantidad: 1,
+      categoria: "Bebidas"
+    },
+    {
+      id: 11,
+      nombre: "Sprite 500ml",
+      precio: 100,
+      stock: 10,
+      img: imagenes.img11,
+      descripcion: "",
+      cantidad: 1,
+      categoria: "Bebidas"
+    },
+    {
+      id: 12,
+      nombre: "Fanta 500ml",
+      precio: 100,
+      stock: 6,
+      img: imagenes.img12,
+      descripcion: "",
+      cantidad: 1,
+      categoria: "Bebidas"
     }
   ])
 
@@ -70,13 +136,16 @@ export const ItemListContainer = () => {
       /* reject(<h2>Ocurrio un error</h2>) */
     }, 2000)
   })
- 
-    solicitarItems.then((productos) => { setCatalogo(productos) })
+
+  solicitarItems.then((productos) => { setCatalogo(productos) })
 
   return (
-    <div className="show-article">
-{catalogo ? (<ItemList catalogo={catalogo} />):(<p>cargando...</p>)}
-      
+    <div>
+      <h1>Nuestros productos</h1>
+      <div className="show-article">
+        {catalogo ? (<ItemList catalogo={catalogo} />) : (<p>cargando...</p>)}
+
+      </div>
     </div>
   );
 }

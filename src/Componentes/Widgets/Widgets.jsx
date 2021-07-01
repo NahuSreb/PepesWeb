@@ -8,7 +8,7 @@ function Widgets({producto}) {
   } */
 
   return (
-    <div className="des__item">
+    <div className="cartWidgets__item">
       <img src={img} alt='' />
       <div className="etiqueta__datos">
         <span>{nombre}</span>

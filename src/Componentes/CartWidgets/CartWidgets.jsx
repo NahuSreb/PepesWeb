@@ -52,7 +52,7 @@ export const CartWidgets = () => {
 
   return (
 
-    <ul className="des">
+    <ul className="cartWidgets">
 
       {catalogo === [] ? <p>Loading...</p> :
         (catalogo.map((producto) => (

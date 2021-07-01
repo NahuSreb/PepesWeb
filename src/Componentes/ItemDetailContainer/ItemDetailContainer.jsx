@@ -15,12 +15,15 @@ export const ItemDetailContainer = () => {
     getShip()
   }, 2000)
   return (
-    <div className="show-article">
-      {ship ? (
-        <ItemDetail ship={ship} />) :
-        (
-          <p>cargando...</p>
-        )}
+    <div>
+      <h1>Nuestros productos</h1>
+      <div className="show-article">
+        {ship ? (
+          <ItemDetail ship={ship} />) :
+          (
+            <p>cargando...</p>
+          )}
+      </div>
     </div>
   );
 
