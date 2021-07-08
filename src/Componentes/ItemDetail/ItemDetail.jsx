@@ -1,9 +1,19 @@
+import { useState } from "react"
+import { useHistory } from "react-router"
 import { ItemCount } from "../ItemCount/ItemCount"
 
-export const ItemDetail = ({detalles}) => {
-  console.log(detalles)
+export const ItemDetail = ({ detalles }) => {
   const { nombre, precio, stock, img/* , cantidad, descripcion  */ } = detalles
-  const initial = 1
+  const [count, setCount] = useState(0)
+  const history = useHistory()
+
+  const onAdd = (quantity) => {
+    setCount(quantity)
+  }
+
+const finishPurchase = () =>{
+  history.push("/carrito")
+}
 
   return (
     <div className="ItemDetailContainer">
@@ -16,7 +26,10 @@ export const ItemDetail = ({detalles}) => {
             <span>Precio: ${precio}</span>
             <p></p>
             <span>Stock: {stock}</span>
-            <ItemCount initial={initial} stock={stock} />
+
+            {!count && <ItemCount initial={1} stock={stock} onAdd={onAdd} />}
+            {!!count && <button onClick={finishPurchase}>Terminar la compra! </button>}
+
             <p></p>
           </div>
         </div>
