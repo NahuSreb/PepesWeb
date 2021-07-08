@@ -1,14 +1,12 @@
 import Item from "../Item/Item"
+import { Fragment } from "react"
 
-export const ItemList = ({ catalogo }) => {
-
-    return (
-
-        catalogo === [] ? <p>Loading...</p> :
-            (catalogo.map((producto) => (
-                <Item key={catalogo.id}
-                    producto={producto} />
-            )))
-
-    )
+export const ItemList = ({ productos }) => {
+    return(
+    <Fragment>
+       {productos && productos.map((producto) => (
+        <Item key={productos.id} producto={producto} />            
+        ))}
+    </Fragment>
+)
 }

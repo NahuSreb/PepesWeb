@@ -1,6 +1,6 @@
 function Widgets({producto}) {
  
-  const { id, nombre, precio, stock, img, cantidad, /* descripcion */ } = producto
+  const { nombre, precio, img/* , stock, cantidad, id, descripcion */} = producto
 /*   const onDel = id => {
     const productos = carrito.filter(producto => producto.id !== id)
     setCarrito(productos)

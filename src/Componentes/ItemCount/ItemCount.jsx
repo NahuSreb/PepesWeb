@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
     const [count, setCount] = useState(initial);
@@ -19,7 +19,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <div>
             <button onClick={Restar} >-</button><p>{count}</p><button onClick={Sumar} >+</button>
-            <button type="button" onClick={onAdd} disabled={stock ==0 ? true : false}>Añadir al carrito</button>
+            <button type="button" onClick={onAdd} disabled={!stock}>Añadir al carrito</button>
         </div>
     )
 }

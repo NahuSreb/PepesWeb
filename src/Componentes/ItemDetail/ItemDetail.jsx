@@ -1,32 +1,26 @@
+import { ItemCount } from "../ItemCount/ItemCount"
 
-export const ItemDetail = ({ ship }) => {
-    const {name, model, manufacturer, cost_in_credits, length, crew} = ship
-    return (
-        <div className="ItemDetailContainer">
-            <ul>
-                <li>
-                    <b>Nombre:</b>
-                    <span>{name}</span>
-                </li>
-                <li>
-                    <b>Modelo:</b>
-                    <span>{model}</span>
-                </li>
-                <li>
-                    <b>Creada por:</b>
-                    <span>{manufacturer}</span>
-                </li>
-                <b>Costo en creditos:</b>
-                <span>{cost_in_credits}</span>
-                <li>
-                    <b>Longitud:</b>
-                    <span>{length}</span>
-                </li>
-                <li>
-                    <b>Tripulacion:</b>
-                    <span>{crew}</span>
-                </li>
-            </ul>
+export const ItemDetail = ({detalles}) => {
+  console.log(detalles)
+  const { nombre, precio, stock, img/* , cantidad, descripcion  */ } = detalles
+  const initial = 1
+
+  return (
+    <div className="ItemDetailContainer">
+      <div className="etiqueta">
+        <div className={stock === 0 ? ("sinStock") : ("")} >
+          <img src={img} alt='' />
+          <div className="etiqueta__datos">
+            <span className="etique__nombre">{nombre}</span>
+            <p></p>
+            <span>Precio: ${precio}</span>
+            <p></p>
+            <span>Stock: {stock}</span>
+            <ItemCount initial={initial} stock={stock} />
+            <p></p>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  )
 }

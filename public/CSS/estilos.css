@@ -1,5 +1,5 @@
 body {
-  width: 95%;
+  width: 90%;
   display: grid;
   margin: 0.05rem auto;
   grid-gap: 0.5rem;
@@ -28,10 +28,11 @@ ul, ol {
   font-size: 3vw;
   padding-left: 1vw;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .menu {
-  height: 15vh;
+  height: 16vh;
   width: 100%;
   align-items: center;
   border-bottom: 2px solid black;
@@ -228,8 +229,8 @@ ul.show {
 
 .etiqueta {
   margin: 0.15rem;
-  width: 30%;
-  height: 6rem;
+  width: 17.2vw;
+  height: 56vh;
   color: f #000;
   display: inline-block;
   border: grey 1px solid;
@@ -248,10 +249,11 @@ ul.show {
 }
 
 .etiqueta img {
-  padding: 0px;
-  display: inline-block;
-  width: 5.85rem;
-  height: 5.85rem;
+  margin: auto;
+  
+  display: block;
+  width: 15vw;
+  height: 30vh;
 }
 
 .etiqueta:hover {

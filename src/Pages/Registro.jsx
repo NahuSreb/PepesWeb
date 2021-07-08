@@ -1,5 +1,5 @@
 
-import { Input } from '../input/Input';
+import { Input } from '../Componentes/Input/Input';
 import { useState } from "react";
 
 function Registro() {
