@@ -1,14 +1,18 @@
 import { useState } from "react"
 import { useHistory } from "react-router"
 import { ItemCount } from "../ItemCount/ItemCount"
+import { useContext } from "react"
+import { CartContext } from "../context/CartContext"
 
 export const ItemDetail = ({ detalles }) => {
   const { nombre, precio, stock, img/* , cantidad, descripcion  */ } = detalles
   const [count, setCount] = useState(0)
   const history = useHistory()
+  const setProducto = useContext(CartContext)
 
   const onAdd = (quantity) => {
     setCount(quantity)
+    setProducto(quantity)
   }
 
 const finishPurchase = () =>{
