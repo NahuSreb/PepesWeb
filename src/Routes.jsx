@@ -7,7 +7,7 @@ import { ItemListContainer } from './Pages/ItemListContainer/ItemListContainer';
 import { Footer } from "./Componentes/Footer/Footer"
 import { MiCompra } from './Pages/MiCompra';
 import { CartWidgets } from './Componentes/CartWidgets/CartWidgets';
-import { CartProvider } from "./Componentes/context/CartContext"
+import { CartProvider } from "./context/CartContext"
 
 
 export const Routes = () => {

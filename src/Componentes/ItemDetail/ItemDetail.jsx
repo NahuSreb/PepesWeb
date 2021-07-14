@@ -1,23 +1,25 @@
 import { useState } from "react"
-import { useHistory } from "react-router"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { useContext } from "react"
-import { CartContext } from "../context/CartContext"
+import { CartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
 
-export const ItemDetail = ({ detalles }) => {
-  const { nombre, precio, stock, img/* , cantidad, descripcion  */ } = detalles
-  const [count, setCount] = useState(0)
-  const history = useHistory()
-  const setProducto = useContext(CartContext)
+export const ItemDetail = ({ item }) => {
+  const { nombre, precio, stock, img/* , cantidad, descripcion  */ } = item
+  
+  const [cantidad, setCantidad] = useState(0)
 
-  const onAdd = (quantity) => {
-    setCount(quantity)
-    setProducto(quantity)
+  const { addItem } = useContext(CartContext)
+
+  function onAdd (count) {
+    if (count > 0) {
+      setCantidad(count)
+      addItem(item, count)
+    } else{
+      console.log(`nada`)
+    }
   }
 
-const finishPurchase = () =>{
-  history.push("/carrito")
-}
 
   return (
     <div className="ItemDetailContainer">
@@ -31,8 +33,8 @@ const finishPurchase = () =>{
             <p></p>
             <span>Stock: {stock}</span>
 
-            {!count && <ItemCount initial={1} stock={stock} onAdd={onAdd} />}
-            {!!count && <button onClick={finishPurchase}>Terminar la compra! </button>}
+            {!cantidad && <ItemCount initial={1} stock={stock} />}
+            {!!cantidad && <button onAdd={onAdd}><Link to="/carrito">Terminar la compra!</Link></button>}
 
             <p></p>
           </div>

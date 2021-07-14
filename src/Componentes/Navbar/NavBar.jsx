@@ -1,11 +1,15 @@
 
-import {Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
 import { CartWidgets } from "../CartWidgets/CartWidgets";
+import { UserContext } from "../../context/userContext";
+import { CartContext } from "../../context/CartContext";
 
 function NavBar() {
+  const { cantidadCar } = useContext(CartContext)
   const [login/* , setLogin */] = useState(true)
-
+  const { name } = useContext(UserContext)
+  console.log(name)
   return (
     <div>
       <nav>
@@ -19,8 +23,9 @@ function NavBar() {
 
           {login === true ? (
             <ul className="menu_right">
-              <li><NavLink activeClassName="menu__link-active" className="menu__link" to="/Carrito">Carrito</NavLink>
-              <ul className="cartWidgets"><CartWidgets /></ul>
+              <li><h1>{name}</h1></li>
+              <li><NavLink activeClassName="menu__link-active" className="menu__link" to="/Carrito">Carrito ({cantidadCar}) </NavLink>
+                <ul className="cartWidgets"><CartWidgets /></ul>
               </li>
             </ul>
           ) :

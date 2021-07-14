@@ -9,7 +9,7 @@ export const ItemDetailContainer = () => {
 
   return (
     <div className="show-article">
-       <ItemDetail detalles={PRODUCTOS.find(x => x.id === parseInt(Itemid))} />
+       <ItemDetail item={PRODUCTOS.find(x => x.id === parseInt(Itemid))} />
     </div>
   )
 }

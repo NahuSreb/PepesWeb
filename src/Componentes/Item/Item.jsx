@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 
-const Item = ({ producto, onAdd }) => {
+const Item = ({ producto}) => {
   const { id, nombre, precio, stock, img/* , cantidad, descripcion */ } = producto
   const initial = 1
 
