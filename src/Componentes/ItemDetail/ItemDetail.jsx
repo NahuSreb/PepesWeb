@@ -7,14 +7,14 @@ import { Link } from "react-router-dom"
 export const ItemDetail = ({ item }) => {
   const { nombre, precio, stock, img/* , cantidad, descripcion  */ } = item
   
-  const [cantidad, setCantidad] = useState(0)
+  const [count, setCount] = useState(0)
 
-  const { addItem } = useContext(CartContext)
+  const  {addItem}  = useContext(CartContext)
 
-  function onAdd (count) {
-    if (count > 0) {
-      setCantidad(count)
-      addItem(item, count)
+  function onAdd (cantidad) {
+    if (cantidad > 0) {
+      setCount(cantidad)
+      addItem(item, cantidad)
     } else{
       console.log(`nada`)
     }
@@ -33,8 +33,8 @@ export const ItemDetail = ({ item }) => {
             <p></p>
             <span>Stock: {stock}</span>
 
-            {!cantidad && <ItemCount initial={1} stock={stock} />}
-            {!!cantidad && <button onAdd={onAdd}><Link to="/carrito">Terminar la compra!</Link></button>}
+            {!count && <ItemCount initial={1} stock={stock} onAdd={onAdd} />}
+            {!!count && <button onAdd={() => onAdd}><Link to="/carrito">Terminar la compra!</Link></button>}
 
             <p></p>
           </div>

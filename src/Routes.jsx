@@ -8,6 +8,7 @@ import { Footer } from "./Componentes/Footer/Footer"
 import { MiCompra } from './Pages/MiCompra';
 import { CartWidgets } from './Componentes/CartWidgets/CartWidgets';
 import { CartProvider } from "./context/CartContext"
+import {Cart} from "./Componentes/Cart/Cart"
 
 
 export const Routes = () => {
@@ -21,7 +22,8 @@ export const Routes = () => {
         <Route path="/Item/:Itemid" exact component={ItemDetailContainer} />
         <Route path="/MiCompra" exact component={MiCompra} />
         <Route path="/Categoria/:categoriaID" component={ItemListContainer} />
-        <Route path="/carrito" component={CartWidgets} />
+        <Route path="/carrito" component={Cart} />
+        
         <Footer />
       </Router>
     </CartProvider>
