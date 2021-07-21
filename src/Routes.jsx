@@ -9,6 +9,7 @@ import { MiCompra } from './Pages/MiCompra';
 import { CartWidgets } from './Componentes/CartWidgets/CartWidgets';
 import { CartProvider } from "./context/CartContext"
 import {Cart} from "./Componentes/Cart/Cart"
+import {TerminarCompra} from "./Pages/TerminarCompra"
 
 
 export const Routes = () => {
@@ -23,7 +24,7 @@ export const Routes = () => {
         <Route path="/MiCompra" exact component={MiCompra} />
         <Route path="/Categoria/:categoriaID" component={ItemListContainer} />
         <Route path="/carrito" component={Cart} />
-        
+        <Route path="/TerminarCompra" component={TerminarCompra}/>
         <Footer />
       </Router>
     </CartProvider>
