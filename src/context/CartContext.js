@@ -4,10 +4,10 @@ export const CartContext = createContext()
 export const CartProvider = ({ children }) => {
     const [productos, setProductos] = useState([])
     const [cantidadCar, setCantidadCar] = useState(0)
-    const [total, SetTotal] = useState(0)
+    const [total, setTotal] = useState(0)
 
     function addItem(items, cantidad) {
-        const isInCart = productos.some(producto => producto.item.id == items.id)
+        const isInCart = productos.some(producto => producto.item.id === items.id)
         if (!isInCart) {
             const nuevoItem = {
                 item: { ...items },
@@ -16,7 +16,7 @@ export const CartProvider = ({ children }) => {
             setProductos([...productos, nuevoItem])
         } else {
             productos.forEach(producto => {
-                if (producto.item.id == items.id) {
+                if (producto.item.id === items.id) {
                     return producto.quantity += cantidad
                 }
             })

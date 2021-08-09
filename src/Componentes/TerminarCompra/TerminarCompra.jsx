@@ -1,8 +1,9 @@
 import { CartContext } from "../../context/CartContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import {Input} from "../Input/Input"
 
 export const TerminarCompra = () => {
-    const { productos } = useContext(CartContext)
+    const { productos, removeItem } = useContext(CartContext)
     const [inputs] = useState([
         {
             id: "name",

@@ -1,31 +1,36 @@
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavBar from './Componentes/Navbar/NavBar';
-import Registro from './Pages/Registro';
-import Login from './Pages/Login';
-import { ItemDetailContainer } from './Pages/ItemDetailContainer/ItemDetailContainer';
+import { NavBar } from './Componentes/Navbar/NavBar';
 import { ItemListContainer } from './Pages/ItemListContainer/ItemListContainer';
-import { Footer } from "./Componentes/Footer/Footer"
+import { Registro } from './Pages/Registro';
+import { Login } from './Pages/Login';
+import { ItemDetailContainer } from './Pages/ItemDetailContainer/ItemDetailContainer';
 import { MiCompra } from './Pages/MiCompra';
-import { CartWidgets } from './Componentes/CartWidgets/CartWidgets';
-import { CartProvider } from "./context/CartContext"
-import {Cart} from "./Componentes/Cart/Cart"
-import {TerminarCompra} from "./Pages/TerminarCompra"
+import { Cart } from "./Componentes/Cart/Cart";
+import { TerminarCompra } from "./Componentes/TerminarCompra/TerminarCompra";
+import { Footer } from "./Componentes/Footer/Footer";
+import { Container } from "react-bootstrap";
+import { CartProvider } from "./context/CartContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export const Routes = () => {
+  const [login, setLoging] = useState(false)
   return (
     <CartProvider>
       <Router>
-        <NavBar />
-        <Route path="/" exact component={ItemListContainer} />
-        <Route path="/Registro" exact component={Registro} />
-        <Route path="/Login" exact component={Login} />
-        <Route path="/Item/:Itemid" exact component={ItemDetailContainer} />
-        <Route path="/MiCompra" exact component={MiCompra} />
-        <Route path="/Categoria/:categoriaID" component={ItemListContainer} />
-        <Route path="/carrito" component={Cart} />
-        <Route path="/TerminarCompra" component={TerminarCompra}/>
-        <Footer />
+        <NavBar login={login} setLoging={setLoging} />
+        <Container>
+          <Route path="/" exact component={ItemListContainer} />
+          <Route path="/Registro" exact component={Registro} />
+          <Route path="/Login" exact component={() => <Login setLoging={setLoging} />} />
+          <Route path="/Item/:itemId" exact component={ItemDetailContainer} />
+          <Route path="/MiCompra" exact component={MiCompra} />
+          <Route path="/Categoria/:categoriaID" component={ItemListContainer} />
+          <Route path="/carrito" component={Cart} />
+          <Route path="/TerminarCompra" component={TerminarCompra} />
+          <Footer />
+        </Container>
       </Router>
     </CartProvider>
   );

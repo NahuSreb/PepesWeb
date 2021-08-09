@@ -1,0 +1,14 @@
+   <div className="etiqueta">
+      <div className={stock === 0 ? ("sinStock") : ("")} >
+        <NavLink to={`/Item/` +  id }><img src={img} alt='' /></NavLink>
+        <div className="etiqueta__datos">
+          <span className="etique__nombre">{nombre}</span>
+          <p></p>
+          <span>Precio: $ {precio}</span>
+          <p></p>
+          <span>Stock:  {stock}</span>
+
+          <p></p>
+        </div>
+      </div>
+    </div>

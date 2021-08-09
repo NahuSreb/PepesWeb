@@ -1,16 +1,15 @@
-
-export const Input = ({ input }) => {
-
-    const { des, id } = input
+import { Form } from "react-bootstrap";
+export const Input = ({ dataForm }) => {
+    const { value, placeHolder, type, event, text, label } = dataForm
+console.log("dataForm", dataForm)
     return (
-        <div className="reg_form_item">
-            <label className="reg_form_label">{des}
-                <input
-                    id={id}
-                    className="reg_form_input"
-                ></input>
-            </label>
-        </div>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>{label}</Form.Label>
+            <Form.Control type={type} placeholder={placeHolder} value={value} onChange={event} />
+            {text && <Form.Text className="text-muted">
+                {text}
+            </Form.Text>}
+        </Form.Group>
     );
 }
 

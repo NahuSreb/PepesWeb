@@ -1,43 +1,46 @@
 
 import { Link, NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
 import { CartWidgets } from "../CartWidgets/CartWidgets";
-import { UserContext } from "../../context/userContext";
-import { CartContext } from "../../context/CartContext";
+import { Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
-function NavBar() {
-  const { cantidadCar } = useContext(CartContext)
-  const [login/* , setLogin */] = useState(true)
-  const { name } = useContext(UserContext)
-  console.log(name)
+
+export const NavBar = ({ login}) => {
+  console.log(login)
+
   return (
-    <div>
-      <nav>
-        <div className="menu">
-          <Link to="/"><p className="icono">Pepe's web</p></Link>
-          <ul className="menu_left">
-            <li><NavLink activeClassName="menu__link-active" className="menu__link" to="/">Inicio</NavLink></li>
-            <li><NavLink activeClassName="menu__link-active" className="menu__link" to="/Categoria/Comidas">Comidas</NavLink></li>
-            <li><NavLink activeClassName="menu__link-active" className="menu__link" to="/Categoria/Bebidas">Bebidas</NavLink></li>
-          </ul>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Pepe's Web</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/Categoria/Comidas">Comidas</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/Categoria/Bebidas">Bebidas</NavDropdown.Item>
+            </NavDropdown>
 
-          {login === true ? (
-            <ul className="menu_right">
-              <li><h1>{name}</h1></li>
-              <li><NavLink activeClassName="menu__link-active" className="menu__link" to="/Carrito">Carrito ({cantidadCar}) </NavLink>
-                <ul className="cartWidgets"><CartWidgets /></ul>
-              </li>
-            </ul>
-          ) :
-            (<ul className="menu_right">
-              <li> <NavLink activeClassName="menu__link-active" className="menu__link" to="/Login">Iniciar Secion</NavLink></li>
-              <li> <NavLink activeClassName="menu__link-active" className="menu__link" to="/Registro" >Registrarse</NavLink></li>
-            </ul>
-            )}
-        </div>
-      </nav>
-    </div>
+          </Nav>
+          <Nav className="justify-content-end">
+            {
+              !login &&
+              <>
+                <Nav.Link as={Link} to="/Login">Login</Nav.Link>
+                <Nav.Link as={Link} to="/Registro">Registrarse</Nav.Link>
+              </>
+            }
+            {
+              login &&
+              <>
+                <CartWidgets />
+              </>
+            }
+
+
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default NavBar;

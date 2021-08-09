@@ -1,12 +1,14 @@
 import Item from "../Item/Item"
 import { Fragment } from "react"
+import { Container } from "react-bootstrap"
 
 export const ItemList = ({ productos }) => {
-    return(
-    <Fragment>
-       {productos && productos.map((producto) => (
-        <Item key={productos.id} producto={producto} />            
-        ))}
-    </Fragment>
-)
+
+    return (
+        <Fragment >
+            <div className="row">
+                {productos.map(producto => <Item key={producto.id} producto={{ ...producto.data(), id: producto.id }} />)}
+            </div>
+        </Fragment>
+    )
 }
